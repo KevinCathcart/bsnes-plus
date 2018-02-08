@@ -10,7 +10,7 @@
 # $(qtlib) -- libraries for linking
 
 ifeq ($(qtlib_version),)
-  qtlib_version := 5
+  qtlib_version := 4
 endif
 
 ifeq ($(moc),)

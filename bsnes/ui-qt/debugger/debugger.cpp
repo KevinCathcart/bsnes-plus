@@ -153,7 +153,7 @@ Debugger::Debugger() {
   consolePane->setMargin(0);
   consolePane->setSpacing(Style::TightWidgetSpacing);
   consolePaneWidget->setLayout(consolePane);
-  console = new QWebEngineView;
+  console = new QWebView;
   console->setHtml(QString(consoleHtmlContent));
   consolePane->addWidget(console);
 
@@ -407,9 +407,9 @@ void Debugger::synchronize() {
 void Debugger::updateConsole() {
   if (messageBuffer.size()) {
     for (LogMessage &m : messageBuffer) {
-      console->page()->runJavaScript(string() << "putp('" << m.message << "', '" << m.color << "')");
+      console->page()->mainFrame()->evaluateJavaScript(string() << "putp('" << m.message << "', '" << m.color << "')");
     }
-    console->page()->runJavaScript("pgend()");
+    console->page()->mainFrame()->evaluateJavaScript("pgend()");
     messageBuffer.clear();
   }
 }
@@ -420,7 +420,7 @@ void Debugger::echo(const char *message, const char *color) {
 
 void Debugger::clear() {
   messageBuffer.clear();
-  console->page()->runJavaScript("pgclr()");
+  console->page()->mainFrame()->evaluateJavaScript("pgclr()");
 }
 
 void Debugger::switchWindow() {

@@ -1,6 +1,6 @@
 include nall/Makefile
 
-qtlibs := QtCore QtGui QtWidgets
+qtlibs := QtCore QtGui
 include nall/qt/Makefile
 
 ifeq ($(OSX_USE_GCC), 1)

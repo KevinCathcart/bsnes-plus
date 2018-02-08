@@ -3,8 +3,9 @@
 #define QT_THREAD_SUPPORT
 
 #include <QApplication>
-#include <QtWidgets>
-#include <QWebEngineView>
+#include <QtGui>
+#include <QWebView>
+#include <QWebFrame>
 //Q_IMPORT_PLUGIN(QJpegPlugin)
 //Q_IMPORT_PLUGIN(QMngPlugin)
 

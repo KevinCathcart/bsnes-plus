@@ -74,7 +74,6 @@ all: build plugins
 	@echo \"all\" done
 
 deploy: all
-	$(qtpath)/bin/macdeployqt $(osxbundle) $(deployqt_flags)
 	@echo \"deploy\" done
 
 include $(snes)/Makefile

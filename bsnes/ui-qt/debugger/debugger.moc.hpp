@@ -32,7 +32,7 @@ public:
 
   QVBoxLayout *layout;
   QSplitter *mainLayout;
-  QWebEngineView *console;
+  QWebView *console;
   QToolBar *toolBar;
   QToolButton *runBreak;
   QToolButton *stepInstruction;
